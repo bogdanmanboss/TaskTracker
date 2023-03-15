@@ -1,0 +1,56 @@
+openapi: 3.1.0
+x-stoplight:
+  id: oh4qvs2fzo4gc
+info:
+  title: Task-Tracker-API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /users:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+              examples: {}
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+            multipart/form-data:
+              schema:
+                type: object
+                properties: {}
+            text/html:
+              schema:
+                type: object
+                properties: {}
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/User'
+      operationId: user-get-many
+components:
+  schemas:
+    User:
+      title: User
+      x-stoplight:
+        id: a93oqhwwii0y1
+      type: object
+      x-internal: false
+      examples: []
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        password:
+          type: string
